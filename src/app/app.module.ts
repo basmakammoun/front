@@ -19,11 +19,14 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutComponent } from './layout/layout.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
+import { PersonnelListComponent } from './personnel-list/personnel-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent
+    LayoutComponent,
+    PersonnelListComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

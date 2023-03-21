@@ -10,11 +10,11 @@ export class PersonnelService {
 
   constructor(private http: HttpClient) { }
 
-  /*getAllPersonnel(): Observable<any> {
+  getAllPersonnel(): Observable<any> {
     return this.http.get(API_URL + 'personnels');
   }
 
-  getPersonnelById(id): Observable<any> {
+  /*getPersonnelById(id): Observable<any> {
     return this.http.get(API_URL + `personnels/${id}`);
   }
 

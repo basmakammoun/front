@@ -1,10 +1,12 @@
 <mat-sidenav-container>
     <mat-sidenav #drawer fixedInViewport="true" mode="side" opened="true" style="width: 230px; ">
       <mat-toolbar class="sidebar-style" color="primary" fxLayout fxLayoutGap="16px">
-        <img class="logo" src="../assets/images/logo.png">
+        <img class="logo" src="../assets/images/logo2.png">
       </mat-toolbar>
-      <mat-nav-list>
-        <a mat-list-item routerLink="/dashboard">Dashboard</a>
+      <mat-nav-list class="menu-sidebar">
+        <a mat-list-item routerLink="/personnels"><span class="icon-sidebar"><mat-icon>account_box</mat-icon><span class="text-menu">Personnels</span></span></a>
+        <a mat-list-item routerLink="/rendez-vous"><span class="icon-sidebar"><mat-icon>calendar_today</mat-icon><span class="text-menu">Rendez-vous</span></span></a>
+        <a mat-list-item routerLink="/factures"><span class="icon-sidebar"><mat-icon> list_alt</mat-icon><span class="text-menu">Factures</span></span></a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>

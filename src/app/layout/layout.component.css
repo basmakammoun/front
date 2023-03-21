@@ -1,5 +1,5 @@
 .mat-toolbar.mat-primary{
-    background-color: #df9191;
+    background-color: #af5353;
 }
 .material-icons{
     font-size: 34px;
@@ -16,4 +16,24 @@
 .sidebar-style{
     background-color: transparent !important;
     height: 120px;
+    margin: 20px 0;
+}
+.menu-sidebar .text-menu{
+    font-family: Brush Script MT;
+    font-size: 25px;
+    color: #af5353;
+    margin-left: 10px;
+}
+.menu-sidebar .mat-mdc-list-item{
+    padding-left: 22px;
+}
+.icon-sidebar .mat-icon{
+    color: #af5353;
+    font-size: 21px;
+    height: auto;
+    width: auto;
+}
+.icon-sidebar{
+    display: flex;
+    align-items: center;
 }
