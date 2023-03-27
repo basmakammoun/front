@@ -14,13 +14,14 @@ export class PersonnelService {
     return this.http.get(API_URL + 'personnels');
   }
 
+  addPersonnel(object : any): Observable<any> {
+      return this.http.post(API_URL + 'personnels', object);
+    }
   /*getPersonnelById(id): Observable<any> {
     return this.http.get(API_URL + `personnels/${id}`);
   }
 
-  addPersonnel(object): Observable<any> {
-    return this.http.post(API_URL + 'personnels', object);
-  }
+  
 
   deletePersonnel(id): Observable<any> {
     return this.http.delete(API_URL + `personnels/${id}`);

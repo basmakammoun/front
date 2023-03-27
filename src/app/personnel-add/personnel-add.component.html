@@ -1,0 +1,28 @@
+<div class="form-add">
+    <form [formGroup]="personnelForm" (ngSubmit)="submit()">
+        <mat-form-field>
+          <input matInput placeholder="Nom" required formControlName="nom">
+        </mat-form-field>
+       
+        <mat-form-field appearance="fill">
+            <mat-label>Date de naissance</mat-label>
+            <input matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY" formControlName="date_naiss">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Numéro de téléphone" required formControlName="num_tel">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Adresse" required formControlName="adresse">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="CIN" required formControlName="cin">
+        </mat-form-field>
+      
+        <button mat-stroked-button  type="submit">Enregistrer</button>
+    </form>
+</div>

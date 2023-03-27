@@ -21,12 +21,17 @@ import { LayoutComponent } from './layout/layout.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { PersonnelListComponent } from './personnel-list/personnel-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PersonnelAddComponent } from './personnel-add/personnel-add.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    PersonnelListComponent
+    PersonnelListComponent,
+    PersonnelAddComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,10 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     FormsModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

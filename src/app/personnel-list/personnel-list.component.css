@@ -1,0 +1,8 @@
+.list-style{
+    padding-top: 20px;
+    background-color: #fff;
+}
+.list-style .button-add{
+    float: right;
+    margin: 0 20px 20px 0;
+}
