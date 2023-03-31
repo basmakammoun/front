@@ -1,0 +1,30 @@
+<div class="mat-elevation-z8 list-style">
+    <a routerLink="/tache-add"><button mat-stroked-button class="button-add">Add</button></a>
+      <table mat-table [dataSource]="dataSource">
+    
+        <ng-container matColumnDef="nom">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="prix">
+          <th mat-header-cell *matHeaderCellDef> Prix </th>
+          <td mat-cell *matCellDef="let element"> {{element.prix}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let element">
+                <button class="button-up-dl" mat-raised-button routerLink="{{element.id}}">
+                    <mat-icon> border_color</mat-icon>
+                </button>
+                <button class="button-up-dl" mat-raised-button (click)="deleteTache(element.id)">
+                  <mat-icon>delete_forever</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    
+    </div>

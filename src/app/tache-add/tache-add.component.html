@@ -1,0 +1,13 @@
+<div class="form-add">
+    <form [formGroup]="tacheForm" (ngSubmit)="submit()">
+        <mat-form-field>
+          <input matInput placeholder="Nom" required formControlName="nom">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Prix" required formControlName="prix">
+        </mat-form-field>
+      
+        <button mat-stroked-button  type="submit">Enregistrer</button>
+    </form>
+</div>

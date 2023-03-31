@@ -1,0 +1,13 @@
+<div class="form-add">
+    <form [formGroup]="clientForm" (ngSubmit)="submit()">
+        <mat-form-field>
+          <input matInput placeholder="Nom" required formControlName="nom">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Numéro de téléphone" required formControlName="num_tel">
+        </mat-form-field>
+      
+        <button mat-stroked-button  type="submit">Enregistrer</button>
+    </form>
+</div>

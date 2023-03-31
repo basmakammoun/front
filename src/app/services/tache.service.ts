@@ -10,23 +10,23 @@ export class TacheService {
 
   constructor(private http: HttpClient) { }
 
-  /*getAlltache(): Observable<any> {
+  getAllTache(): Observable<any> {
     return this.http.get(API_URL + 'taches');
   }
 
-  gettacheById(id): Observable<any> {
+  getTacheById(id : any): Observable<any> {
     return this.http.get(API_URL + `taches/${id}`);
   }
 
-  addtache(object): Observable<any> {
+  addTache(object: any): Observable<any> {
     return this.http.post(API_URL + 'taches', object);
   }
 
-  deletetache(id): Observable<any> {
+  deleteTache(id: any): Observable<any> {
     return this.http.delete(API_URL + `taches/${id}`);
   }
 
-  updatetache(id, object): Observable<any> {
+  updateTache(id: any, object: any): Observable<any> {
     return this.http.put(API_URL + `taches/${id}`, object);
-  }*/
+  }
 }

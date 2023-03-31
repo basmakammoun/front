@@ -25,13 +25,25 @@ import { PersonnelAddComponent } from './personnel-add/personnel-add.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { ClientListComponent } from './client-list/client-list.component';
+import { ClientAddComponent } from './client-add/client-add.component';
+import { RendezVousListComponent } from './rendez-vous-list/rendez-vous-list.component';
+import { RendezVousAddComponent } from './rendez-vous-add/rendez-vous-add.component';
+import { TacheListComponent } from './tache-list/tache-list.component';
+import { TacheAddComponent } from './tache-add/tache-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     PersonnelListComponent,
-    PersonnelAddComponent
+    PersonnelAddComponent,
+    ClientListComponent,
+    ClientAddComponent,
+    RendezVousListComponent,
+    RendezVousAddComponent,
+    TacheListComponent,
+    TacheAddComponent
   ],
   imports: [
     BrowserModule,

@@ -17,3 +17,9 @@
 .list-style table th{
     font-weight: 900;
 }
+.barre-recherche{
+    display: flex;
+    align-items: center;
+    max-width: 480px;
+    margin: auto;
+}

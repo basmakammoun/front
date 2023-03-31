@@ -16,19 +16,24 @@ export class PersonnelService {
 
   addPersonnel(object : any): Observable<any> {
       return this.http.post(API_URL + 'personnels', object);
-    }
-  /*getPersonnelById(id): Observable<any> {
-    return this.http.get(API_URL + `personnels/${id}`);
   }
 
-  
+  /*addPersonnels(object : any) {
+    this.http.post(API_URL + 'personnels', object).subscribe((res : any) =>{
+      console.log(res);
+    })
+  }*/
 
-  deletePersonnel(id): Observable<any> {
+  deletePersonnel(id : any): Observable<any> {
     return this.http.delete(API_URL + `personnels/${id}`);
   }
 
-  updatePersonnel(id, object): Observable<any> {
+  getPersonnelById(id : any): Observable<any> {
+    return this.http.get(API_URL + `personnels/${id}`);
+  }
+  
+  updatePersonnel(id : any, object : any): Observable<any> {
     return this.http.put(API_URL + `personnels/${id}`, object);
-  }*/
+  }
 
 }

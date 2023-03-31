@@ -10,23 +10,23 @@ export class ClientService {
 
   constructor(private http: HttpClient) { }
 
-  /*getAllClient(): Observable<any> {
+  getAllClient(): Observable<any> {
     return this.http.get(API_URL + 'Clients');
   }
 
-  getClientById(id): Observable<any> {
+  getClientById(id : any): Observable<any> {
     return this.http.get(API_URL + `Clients/${id}`);
   }
 
-  addClient(object): Observable<any> {
+  addClient(object : any): Observable<any> {
     return this.http.post(API_URL + 'Clients', object);
   }
 
-  deleteClient(id): Observable<any> {
+  deleteClient(id : any): Observable<any> {
     return this.http.delete(API_URL + `Clients/${id}`);
   }
 
-  updateClient(id, object): Observable<any> {
+  updateClient(id : any, object : any): Observable<any> {
     return this.http.put(API_URL + `Clients/${id}`, object);
-  }*/
+  }
 }

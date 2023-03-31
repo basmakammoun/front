@@ -22,6 +22,15 @@
         <mat-form-field>
             <input matInput placeholder="CIN" required formControlName="cin">
         </mat-form-field>
+
+        <mat-form-field>
+            <mat-select placeholder="Tache" [formControl]="taches" [(value)]="selectedTaches" multiple>
+              <mat-option *ngFor="let topping of tacheList" [value]="topping['id']">{{topping["nom"]}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <p>
+            {{selectedTaches | json}}
+        </p>
       
         <button mat-stroked-button  type="submit">Enregistrer</button>
     </form>
