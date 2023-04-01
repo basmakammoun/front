@@ -49,6 +49,9 @@ export class PersonnelAddComponent {
     if (!!this.currentItemID) {
       this.PersonnelService.updatePersonnel(this.currentItemID, objectToSubmit).subscribe(
         (response) => {
+          for (var i = 0; i < this.selectedTaches.length; i++) {
+            console.log(this.selectedTaches);
+          }
           this.router.navigate(['/personnels']);
         },
         (error) => {
@@ -64,7 +67,6 @@ export class PersonnelAddComponent {
               'id_personnel': idNewPer,
               'id_tache': this.selectedTaches[i]
             }
-            console.log(object)
             this.tachePersonnelService.addTaches_personnels(object).subscribe((res) => {
               console.log("sucess")
             },

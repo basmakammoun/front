@@ -14,8 +14,9 @@ import { TacheService } from '../services/tache.service';
 export class PersonnelListComponent implements OnInit{
   constructor(private personnelService:PersonnelService, private router:Router, private tachePersonnelService:TachePersonnelService, private tacheService:TacheService){
   }
-  displayedColumns: string[] = ["nom" , "date_naiss" , "num_tel" , "adresse" , "cin", "actions"];
-  dataSource = new MatTableDataSource();
+  displayedColumns: string[] = ["nom" , "date_naiss" , "num_tel" , "adresse" , "cin", "tache", "actions"];
+  dataSource = new MatTableDataSource([]);
+  personnelList=[];
 
   /*fetchDataSource():void{
     this.personnelService.getAllPersonnel().then((result)=>(this.dataSource.data = result));
@@ -33,25 +34,23 @@ export class PersonnelListComponent implements OnInit{
 }
 
   ngOnInit() {
-    this.personnelService.getAllPersonnel().subscribe((data) => {
-      for(var i=0; i< data.length;i++){
-        data[i]['date_naiss']=formatDate(data[i]['date_naiss']);
-      }
-      this.dataSource = data;
-      this.tachePersonnelService.getAllTaches_personnels().subscribe((dataT) => {
-        
-          for(var i=0; i< dataT.length;i++){
-           data.map((item : any) => {
-          const idtMatches = dataT.filter((subItem:any) => subItem.id_personnel === item.id);
-          const idoValues = idtMatches.map((match:any) => match.id_tache);
-          console.log(idoValues) 
-            const index = data.findIndex((x:any) => x.id == Number(dataT[i]['id_personnel']))
-            if(!!index){
-              data[index]['tache_id']=idoValues;
-            }});console.log(data);
-          }
-        
+    this.personnelService.getAllPersonnel().subscribe((personnelList) => {
+      this.personnelList = personnelList;
+      this.personnelList.forEach((personnel:any) => {
+        personnel['date_naiss']=formatDate(personnel['date_naiss']);
+        this.tachePersonnelService
+          .getTaches_personnelsById(personnel["id"])
+          .subscribe((tacheIds) => {
+            personnel["tacheList"] = [];
+            tacheIds.forEach((tacheId:any) => { 
+              this.tacheService.getTacheById(tacheId["id_tache"]).subscribe((tache) => {
+                personnel["tacheList"].push(tache["nom"]);
+              });
+            });
+            this.dataSource.data = this.personnelList;
+          });
       });
     });
-  }
+  } 
 }
+
